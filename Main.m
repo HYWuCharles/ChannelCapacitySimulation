@@ -117,3 +117,15 @@ plot(1:1:31,c)
 title('瑞利信道容量')
 xlabel('SNR in dB')
 ylabel('信道容量 bits/s/Hz')
+
+%--------------Alamouti---------------%
+c = zeros(1,31);
+
+for SNR = 0:1:30
+    c(1,SNR+1) = alamouti(SNR);
+end
+figure
+plot(1:1:31,c)
+title('Alamouti码 2发1收')
+xlabel('SNR in dB')
+ylabel('信道容量 bits/s/Hz')
